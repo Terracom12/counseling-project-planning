@@ -1,5 +1,5 @@
-from conan import ConanFile
-from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout
+from conan import ConanFile  # type: ignore
+from conan.tools.cmake import CMake, CMakeDeps, CMakeToolchain, cmake_layout  # type: ignore
 
 # ??? Generated through `conan new cmake_exe`
 # TODO: Configure
