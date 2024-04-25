@@ -1,0 +1,8 @@
+# Build files
+build/
+
+# Generated documentation
+docs/
+
+# Clangd cache
+.cache/
