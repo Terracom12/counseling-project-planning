@@ -4,11 +4,9 @@
 #include <fmt/ranges.h>
 #include <stdexcept>
 
-Application::Application(std::unique_ptr<StorageBase> storage, std::unique_ptr<UIBase> interface,
-                         std::unique_ptr<LogicUnitBase> logicUnit)
+Application::Application(std::unique_ptr<Storage> storage, std::unique_ptr<UI> interface)
     : m_storage(std::move(storage))
     , m_interface(std::move(interface))
-    , m_logicUnit(std::move(logicUnit))
 {
     if (s_isInstantiated) {
         throw std::logic_error("May not instantiate more than one application!");
@@ -23,6 +21,6 @@ void Application::run()
     auto major = m_interface->promptMajorChoice({"CS"});
     auto uniChoice = m_interface->promptUniversityChoice({"UCI", "UCSD", "UCLA"});
     auto courses = m_interface->promptCourseSelection({"CS1A", "CS1B", "MATH3A"});
-    ;
+
     m_interface->display(fmt::format("{}", courses));
 }

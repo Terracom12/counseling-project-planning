@@ -1,6 +1,6 @@
 #include "ui/UIBase.hpp"
 
-class ExampleUI final : public UIBase
+class ExampleUI final : public UI
 {
 public:
     std::string promptFileChoice(std::string_view msg) const override;

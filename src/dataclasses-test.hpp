@@ -1,7 +1,9 @@
 #pragma once
 
 #include <map>
+#include <memory>
 #include <string>
+#include <variant>
 #include <vector>
 
 /**
@@ -27,24 +29,22 @@ struct StudentData
     std::string universityChoice;
 };
 
-enum class Type { AND, OR };
-
 // TODO: Logical stuff
 // TODO: Allowed / permitted enum type for course spec
 
-class LogicalCourseRela
+class LogicalCourseRelation
 {
-    Type type;
+    enum class Type { AND, OR } type;
+    std::variant<std::vector<Course>, std::unique_ptr<LogicalCourseRelation>> req;
 };
 
-struct CourseSpec
+struct CourseReq
 {
-
-    bool isRequired; // required / additional approved
+    std::variant<Course, LogicalCourseRelation> req;
 };
 
 struct UniversityData
 {
     std::string name;
-    std::map<std::string, CourseSpec> majorSpecs;
+    std::map<std::string, CourseReq> majorReqs;
 };

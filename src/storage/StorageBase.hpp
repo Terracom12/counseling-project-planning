@@ -4,7 +4,7 @@
 #include <string_view>
 #include <vector>
 
-class StorageBase
+class Storage
 {
 public:
     // TODO: Strongly-typed file paths

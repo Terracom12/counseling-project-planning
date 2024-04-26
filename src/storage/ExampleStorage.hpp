@@ -2,7 +2,7 @@
 
 #include "StorageBase.hpp"
 
-class ExampleStorage : public StorageBase
+class ExampleStorage : public Storage
 {
     void loadTranscript(std::string_view path) override;
     void loadUniData(std::string_view path) override;
