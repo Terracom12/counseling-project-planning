@@ -19,11 +19,6 @@ std::string ExampleUI::promptUniversityChoice(const StringList& validUniNames) c
     std::cout << prompt;
     std::getline(std::cin, uniChoice);
 
-    while (std::find(validUniNames.begin(), validUniNames.end(), uniChoice) == validUniNames.end()) {
-        std::cout << "Invalid choice, try again!\n" << prompt;
-        std::getline(std::cin, uniChoice);
-    }
-
     return uniChoice;
 }
 
@@ -33,11 +28,6 @@ std::string ExampleUI::promptMajorChoice(const StringList& validMajorNames) cons
     std::string majorName;
     std::cout << prompt;
     std::getline(std::cin, majorName);
-
-    while (std::find(validMajorNames.begin(), validMajorNames.end(), majorName) == validMajorNames.end()) {
-        std::cout << "Invalid choice, try again!\n" << prompt;
-        std::getline(std::cin, majorName);
-    }
 
     return majorName;
 }
@@ -62,8 +52,6 @@ StringList ExampleUI::promptCourseSelection(const StringList& validCourseNames) 
     }
 
     courseNames.push_back(listInput.substr(prevSlice));
-
-    // TODO: Validation
 
     return courseNames;
 }

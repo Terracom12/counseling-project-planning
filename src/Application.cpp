@@ -17,10 +17,17 @@ Application::Application(std::unique_ptr<Storage> storage, std::unique_ptr<UI> i
 
 void Application::run()
 {
-    auto fileName = m_interface->promptFileChoice(fmt::format("{}: ", "Please enter the path to your transcript file"));
-    auto major = m_interface->promptMajorChoice({"CS"});
-    auto uniChoice = m_interface->promptUniversityChoice({"UCI", "UCSD", "UCLA"});
-    auto courses = m_interface->promptCourseSelection({"CS1A", "CS1B", "MATH3A"});
+    // Obtain transcript data
+    auto transcriptFilePath = m_interface->promptFileChoice("Please enter the path to your transcript file: ");
+    m_storage->loadTranscript(transcriptFilePath);
 
-    m_interface->display(fmt::format("{}", courses));
+    auto uniDataFilePath = m_interface->promptFileChoice("Please enter the path to a university course database: ");
+    m_storage->loadUniData(uniDataFilePath);
+
+    auto uni = m_interface->promptUniversityChoice(m_storage->getValidUniNames());
+
+    auto major = m_interface->promptMajorChoice(m_storage->getValidMajorNames(uni));
+    auto courses = m_interface->promptCourseSelection(m_storage->getValidCourseNames(uni, major));
+
+    m_interface->display("Application exiting!");
 }

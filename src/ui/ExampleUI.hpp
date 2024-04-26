@@ -1,5 +1,9 @@
 #include "ui/UIBase.hpp"
 
+/**
+ * @brief Basic UI example. Parses data from stdin and displays it back to user.
+ * 
+ */
 class ExampleUI final : public UI
 {
 public:
