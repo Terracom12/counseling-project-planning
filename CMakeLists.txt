@@ -5,7 +5,9 @@ project(counseling-project LANGUAGES CXX)
 set(sources "src/main.cpp"
             "src/Application.cpp"
             "src/ui/ExampleUI.cpp"
+            "src/ui/BasicUI.cpp"
             "src/storage/ExampleStorage.cpp"
+            "src/storage/BasicStorage.cpp"
 )
 
 add_executable(counseling ${sources})
