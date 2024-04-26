@@ -10,9 +10,12 @@ Next, make sure [cmake], and a compiler supporting C++17 is installed, then run 
 
 ```terminal
 conan install . -s build_type=Debug --build=missing
-cmake --preset default
+cmake --preset default-<os>
 cmake --build build
 ```
+
+where \<os\> is one of `windows` or `unix`.
+
 
 [conan]: https://conan.io/downloads
 [cmake]: https://cmake.org/download/
