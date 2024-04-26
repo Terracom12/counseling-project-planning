@@ -15,13 +15,29 @@
             }
         },
         {
-            "name": "any",
+            "name": "default",
             "binaryDir": "${sourceDir}/build",
-            "inherits": "conan",
             "generator": "Unix Makefiles",
+            "inherits": "conan",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+            }
+        }
+    ],
+    "buildPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default",
+            "jobs": 16
+        }
+    ],
+    "testPresets": [
+        {
+            "name": "default",
+            "configurePreset": "default",
+            "execution": {
+                "jobs": 16
             }
         }
     ]
