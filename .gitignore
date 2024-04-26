@@ -6,3 +6,6 @@ docs/
 
 # Clangd cache
 .cache/
+
+# Visual Studio
+.vs/
