@@ -17,7 +17,4 @@ public:
     virtual std::vector<std::string> getValidUniNames() const = 0;
     virtual std::vector<std::string> getValidMajorNames(std::string_view uni) const = 0;
     virtual std::vector<std::string> getValidCourseNames(std::string_view uni, std::string_view major) const = 0;
-
-protected:
-    StudentData m_studentData;
 };
