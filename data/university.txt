@@ -1,0 +1,11 @@
+UCI
+Computer Science
+CS1A, CS1B, CS1C, MATH3A, MATH3B
+
+UCSD
+Computer Science
+CS1C, CS8B, CS1D, CS3B
+
+UCLA
+Computer Science
+CS1B, CS1D, CS3B, MATH3A, MATH3B, MATH3C
