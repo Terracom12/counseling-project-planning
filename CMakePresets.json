@@ -20,22 +20,14 @@
             "cacheVariables": {
                 "CMAKE_CXX_EXTENSIONS": "OFF",
                 "CMAKE_CXX_STANDARD": "17",
-                "CMAKE_CXX_STANDARD_REQUIRED": "ON"
+                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
+                "CMAKE_C_COMPILER": "clang",
+                "CMAKE_CXX_COMPILER": "clang++",
+                "CMAKE_MAKE_PROGRAM": "make"
             }
         },
         {
-            "name": "default-windows",
-            "binaryDir": "${sourceDir}/build",
-            "generator": "Visual Studio 17 2022",
-            "architecture": "x64",
-            "inherits": ["conan", "common"],
-            "cacheVariables": {
-                "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
-            }
-        },
-        {
-            "name": "default-linux",
+            "name": "default",
             "binaryDir": "${sourceDir}/build",
             "generator": "Unix Makefiles",
             "inherits": ["conan", "common"],
@@ -47,27 +39,15 @@
     ],
     "buildPresets": [
         {
-            "name": "default-windows",
-            "configurePreset": "default-windows",
-            "jobs": 16
-        },
-        {
-            "name": "default-linux",
-            "configurePreset": "default-linux",
+            "name": "default",
+            "configurePreset": "default",
             "jobs": 16
         }
     ],
     "testPresets": [
         {
-            "name": "default-windows",
-            "configurePreset": "default-windows",
-            "execution": {
-                "jobs": 16
-            }
-        },
-        {
-            "name": "default-linux",
-            "configurePreset": "default-linux",
+            "name": "default",
+            "configurePreset": "default",
             "execution": {
                 "jobs": 16
             }

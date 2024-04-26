@@ -42,6 +42,6 @@ class CounselingProjectRecipe(ConanFile):
         # cmake_layout(self, build_folder="build/conan")
 
     def generate(self):
-        tc = CMakeToolchain(self)
+        tc = CMakeToolchain(self, generator="Unix Makefiles")
         tc.user_presets_path = False
         tc.generate()

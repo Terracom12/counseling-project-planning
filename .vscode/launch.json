@@ -11,6 +11,10 @@
             "program": "./build/counseling",
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "CMake: build",
+
+            "windows": {
+                "program": ".\\build\\counseling",
+            }
         }
     ]
 }
