@@ -17,7 +17,7 @@ DIR_GRAPH_MAX_DEPTH    = 3
 
 
 
-EXCLUDE_SYMBOLS = std::basic*
+# EXCLUDE_SYMBOLS = std::*
 BUILTIN_STL_SUPPORT    = YES
 # Don't display aliased types like `basic_string`
 INLINE_SIMPLE_STRUCTS  = YES
