@@ -7,30 +7,17 @@
     },
     "configurePresets": [
         {
-            "name": "conan",
-            "hidden": true,
-            "cacheVariables": {
-                "CMAKE_TOOLCHAIN_FILE": "${sourceDir}/build/conan/conan_toolchain.cmake",
-                "CMAKE_POLICY_DEFAULT_CMP0091": "NEW"
-            }
-        },
-        {
             "name": "common",
             "hidden": true,
             "cacheVariables": {
-                "CMAKE_CXX_EXTENSIONS": "OFF",
-                "CMAKE_CXX_STANDARD": "17",
-                "CMAKE_CXX_STANDARD_REQUIRED": "ON",
-                "CMAKE_C_COMPILER": "clang",
-                "CMAKE_CXX_COMPILER": "clang++",
-                "CMAKE_MAKE_PROGRAM": "make"
+                "CMAKE_CXX_EXTENSIONS": "OFF"
             }
         },
         {
             "name": "default",
             "binaryDir": "${sourceDir}/build",
-            "generator": "Unix Makefiles",
-            "inherits": ["conan", "common"],
+            "generator": "Ninja",
+            "inherits": "common",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"

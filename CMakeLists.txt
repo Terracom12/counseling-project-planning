@@ -2,6 +2,16 @@ cmake_minimum_required(VERSION 3.15)
 
 project(counseling-project LANGUAGES CXX)
 
+include(FetchContent)
+
+FetchContent_Declare(
+  catch
+  GIT_REPOSITORY https://github.com/fmtlib/fmt.git
+  GIT_TAG 10.2.1
+)
+
+FetchContent_MakeAvailable(catch)
+
 set(sources "src/main.cpp"
             "src/Application.cpp"
             "src/ui/ExampleUI.cpp"
@@ -19,7 +29,6 @@ target_include_directories(counseling PUBLIC src)
 
 target_compile_features(counseling PUBLIC cxx_std_17)
 
-find_package(fmt REQUIRED)
 target_link_libraries(counseling PRIVATE fmt::fmt)
 
 include(CTest)
