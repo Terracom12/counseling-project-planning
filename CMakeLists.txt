@@ -12,7 +12,7 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(catch)
 
-set(sources "src/main.cpp"
+add_library(counseling_lib
             "src/Application.cpp"
             "src/ui/ExampleUI.cpp"
             "src/ui/BasicUI.cpp"
@@ -20,16 +20,21 @@ set(sources "src/main.cpp"
             "src/storage/BasicStorage.cpp"
 )
 
-add_executable(counseling ${sources})
+target_compile_features(counseling_lib PUBLIC cxx_std_17)
+
+target_include_directories(counseling_lib PUBLIC src)
+
+target_link_libraries(counseling_lib PUBLIC fmt::fmt)
+
+add_executable(counseling "src/main.cpp")
+
+target_link_libraries(counseling PUBLIC counseling_lib)
 
 # TODO: Switch on build mode
-set_property(TARGET counseling PROPERTY ENABLE_EXPORTS 1)
+# set_property(TARGET counseling PROPERTY ENABLE_EXPORTS 1)
 
-target_include_directories(counseling PUBLIC src)
 
-target_compile_features(counseling PUBLIC cxx_std_17)
 
-target_link_libraries(counseling PRIVATE fmt::fmt)
 
 include(CTest)
 if(BUILD_TESTING)

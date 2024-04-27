@@ -6,7 +6,7 @@
 			"label": "CMake: build",
 			"command": "build",
 			"targets": [
-				"counseling"
+				"all"
 			],
 			"group": {
 				"kind": "build",

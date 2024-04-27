@@ -8,11 +8,11 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(Catch2)
 
-add_executable(counseling_test test_factorial.cpp)
+add_executable(counseling_test "test_factorial.cpp")
 
 target_link_libraries(
     counseling_test PRIVATE
-    counseling
+    counseling_lib
     Catch2::Catch2WithMain
 )
 

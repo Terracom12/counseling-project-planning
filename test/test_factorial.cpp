@@ -14,7 +14,7 @@ int factorial(int n)
 
 TEST_CASE("Factorial 0-5", "[factorial]")
 {
-    REQUIRE(factorial(0) == -1);
+    REQUIRE(factorial(0) == 1);
     REQUIRE(factorial(1) == 1);
     REQUIRE(factorial(2) == 2);
     REQUIRE(factorial(3) == 6);
