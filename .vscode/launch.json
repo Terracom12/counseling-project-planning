@@ -8,12 +8,11 @@
             "name": "Debug",
             "type": "lldb",
             "request": "launch",
-            "program": "./build/counseling",
+            "program": "./build/counseling_exe",
             "cwd": "${workspaceRoot}",
             "preLaunchTask": "CMake: build",
-
             "windows": {
-                "program": ".\\build\\counseling",
+                "program": ".\\build\\counseling_exe",
             }
         }
     ]
